@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     else {
       // MEnsaje de error
       this.error()
+      this.form.reset()
     }
   }
   error(){
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   fakeLoading() {
+    // Redireccionamos al inicio
     this.loading = true;
     setTimeout(() => {
       this.loading = true;
