@@ -13,6 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // COMPONENTES
 import { LoginComponent } from './components/login/login.component';
@@ -32,7 +34,9 @@ import { LoginComponent } from './components/login/login.component';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

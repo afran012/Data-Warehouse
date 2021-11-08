@@ -1,7 +1,9 @@
 
 <body class="body">
     <section class="login">
-        <form [formGroup]="form" (ngSubmit)="ingresar()">
+        <mat-spinner *ngIf="loading" diameter='50' color="accent" class="spinner-login"></mat-spinner>
+
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
             <img src="../../../assets/user.png"  class="img-user" alt="">
             <h1>Login</h1>
             <mat-form-field class="user-label" appearance="fill" color="accent">
@@ -15,7 +17,5 @@
             <br>
             <button type="submit" class="login-btn" mat-raised-button color="accent" [disabled]="form.invalid" >Log In</button>
         </form>
-
     </section>
-
 </body>
