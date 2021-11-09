@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Módulos
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // ANGULAR MATERIAL
 
@@ -30,7 +31,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   exports: [
 
@@ -42,7 +44,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
 
   ]
 })

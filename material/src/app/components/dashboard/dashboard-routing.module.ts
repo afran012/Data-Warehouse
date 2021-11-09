@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { MainComponent } from './main/main.component';
+import { UsersComponent } from './users/users.component';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent }
+  { path: '', component: DashboardComponent, children: [
+    { path: '', component: MainComponent },
+    { path: 'users', component: UsersComponent },
+    { path: 'reports', component: ReportsComponent }
+
+  ]}
 ];
 
 @NgModule({
