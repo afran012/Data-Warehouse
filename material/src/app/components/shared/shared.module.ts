@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -32,7 +33,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   exports: [
 
@@ -45,7 +47,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
 
   ]
 })
