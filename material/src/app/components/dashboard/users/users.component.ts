@@ -27,6 +27,16 @@ export class UsersComponent implements OnInit {
     this.loadUsers();
   }
 
+  deleteUser(index : number) {
+    console.log(index);
+
+    //https://www.npmjs.com/package/nanoid
+
+    this._userService.deleteUser(index);
+    this.loadUsers();
+    
+  }
+
   loadUsers() {
     this.listUsers = this._userService.getUser();
     this.dataSource = new MatTableDataSource(this.listUsers);
