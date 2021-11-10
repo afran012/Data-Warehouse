@@ -2,6 +2,12 @@
     <mat-toolbar>
         <span> Users </span>
     </mat-toolbar>
+
+    <mat-form-field appearance="standard" appearance="fill" color="accent" class="search-input">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
+    </mat-form-field>
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -36,13 +42,13 @@
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element">
             <section class="btn-list-user">
-              <a>
+              <a matTooltip="Search">
                 <mat-icon>search</mat-icon>
               </a>
-              <a>
+              <a matTooltip="Edit">
                 <mat-icon>edit</mat-icon>
               </a>
-              <a>
+              <a matTooltip="Delete">
                 <mat-icon>delete</mat-icon>
               </a>
             </section>
