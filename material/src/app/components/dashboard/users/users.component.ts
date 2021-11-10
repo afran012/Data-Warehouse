@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../interfaces/user';
 @Component({
   selector: 'app-users',
@@ -10,27 +11,25 @@ import { User } from '../../../interfaces/user';
 })
 export class UsersComponent implements OnInit {
 
-  listUsers: User[] = [
-    {user: '1dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '2dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '3dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '4dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '5dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '6dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '7dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '8dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'},
-    {user: '9dsfasdf', name: 'Hydrogen', lastname: 'sdfasd', sex: 'Hasdfasdf'}
-  ];
+  listUsers: User[]=[];
+
+
 
   displayedColumns: string[] = ['user', 'name', 'lastname', 'sex', 'actions'];
-  dataSource = new MatTableDataSource(this.listUsers);
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() { }
+  constructor(private _userService:UserService) { }
 
   ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.listUsers = this._userService.getUser();
+    this.dataSource = new MatTableDataSource(this.listUsers);
   }
 
   ngAfterViewInit() {
