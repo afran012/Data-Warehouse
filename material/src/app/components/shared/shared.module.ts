@@ -18,6 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -36,7 +37,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     HttpClientModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule
   ],
   exports: [
 
@@ -51,8 +53,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     HttpClientModule,
     MatTableModule,
-    MatTooltipModule
-
+    MatTooltipModule,
+    MatPaginatorModule
   ]
 })
 export class SharedModule { }
