@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { ReportsComponent } from './reports/reports.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MainComponent,
     UsersComponent,
     ReportsComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateUserComponent
   ],
   imports: [
     CommonModule,

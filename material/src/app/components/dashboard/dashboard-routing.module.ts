@@ -4,13 +4,14 @@ import { DashboardComponent } from './dashboard.component';
 import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { ReportsComponent } from './reports/reports.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, children: [
     { path: '', component: MainComponent },
     { path: 'users', component: UsersComponent },
-    { path: 'reports', component: ReportsComponent }
-
+    { path: 'reports', component: ReportsComponent },
+    { path: 'create-user', component: CreateUserComponent }
   ]}
 ];
 
